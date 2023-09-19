@@ -2,7 +2,7 @@
 <body>
  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-<div id="sankey_multiple" style="width: 900px; height: 300px;"></div>
+<div id="sankey_multiple" style="width: 3600px; height: 1200px;"></div>
 
 <script type="text/javascript">
   google.charts.load("current", {packages:["sankey"]});
@@ -31,20 +31,16 @@
        [ 'AR', 'HoloLens 2', 1 ],
        [ 'AR', 'HoloLens', 1 ],
        [ 'VR', 'Não especificado', 1 ],
-       [ 'VR', 'Oculus Rift CV1', 1 ],
+       [ 'VR', 'Oculus Rift CV1', 0.5 ],
        [ 'VR', 'HTC Vive', 3 ],
        [ 'VR', 'HTC Vive Pro', 1 ],
+	 [ 'VR', 'NVIS nVisor ST50', 0.5 ],
        [ 'VR', 'Meta Oculus Quest 2', 2 ],
-       [ 'MR', 'HoloLens 2', 1 ],
-       [ 'MR', 'HoloLens 2', 0.5 ],
+       [ 'MR', 'HoloLens 2', 2 ],
        [ 'MR', 'Meta Oculus Quest 2', 0.5 ],
+ 	[ 'MR', 'Oculus Rift + Meta ', 0.5 ],
 
-       [ 'AR', 'physics', 1 ],
-       [ 'AR', 'education', 3], 
-       [ 'AR', 'health', 3 ], 
-       [ 'AR', 'robotics', 1 ],
-       [ 'AR', 'aerospace engineering', 1 ],
-       
+     
 
 
 
@@ -54,8 +50,8 @@
 
     // Set chart options
     var options = {
-      width: 800,
-      sankey: { node: { nodePadding: 80 } },
+      width: 1000,
+      sankey: { node: { nodePadding: 10 } },
     };
 
     // Instantiate and draw our chart, passing in some options.
