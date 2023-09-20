@@ -5,7 +5,7 @@
       src="https://www.gstatic.com/charts/loader.js"
     ></script>
 
-    <div id="sankey_multiple" style="width: 3600px; height: 1600px"></div>
+    <div id="sankey_multiple" style="width: 2000px; height: 900px"></div>
 
     <script type="text/javascript">
       google.charts.load("current", { packages: ["sankey"] });
@@ -28,62 +28,49 @@
           ["2023", "AR", 1],
 
           ["AR", "Aprendizagem", 3],
-          ["AR", "Interação", 3],
-          ["AR", "Montagem", 1],
-          ["AR", "Movimentação", "1/2"],
-          ["VR", "Aprendizagem", 3],
-          ["VR", "Interação", 3],
-          ["VR", "Montagem", 1],
-          ["VR", "Movimentação", "3/2"],
-          ["MR", "Aprendizagem", "3/2"],
-          ["MR", "Interação", "3/2"],
-          ["MR", "Montagem", "3/2"],
-          ["MR", "Movimentação", "3/2"],
-
-          ["Aprendizagem", "Aprendizagem", 0],
-          ["Aprendizagem", "Interação", 0],
-          ["Aprendizagem", "Montagem", 0],
-          ["Aprendizagem", "Movimentação", 1],
-          ["Interação", "Aprendizagem", 0],
-          ["Interação", "Interação", 0],
-          ["Interação", "Montagem", 0],
-          ["Interação", "Movimentação", "1/2"],
-          ["Montagem", "Aprendizagem", 0],
-          ["Montagem", "Interação", 0],
-          ["Montagem", "Montagem", 0],
-          ["Montagem", "Movimentação", 0],
-          ["Movimentação", "Aprendizagem", 1],
-          ["Movimentação", "Interação", "1/2"],
-          ["Movimentação", "Montagem", "1/2"],
-          ["Movimentação", "Movimentação", 0],
+          ["AR", "Interação", 4],
+          ["AR", "Montagem", 2],
+          ["AR", "Movimentação", 6],
+          ["VR", "Aprendizagem", 1.5],
+          ["VR", "Interação", 3.5],
+          ["VR", "Montagem", 0.5],
+          ["VR", "Movimentação", 1.5],
+          ["MR", "Aprendizagem", 0.5],
+          ["MR", "Interação", 1],
+          ["MR", "Montagem", 0.5],
+          ["MR", "Movimentação", 2],
 
           ["Aprendizagem", "Affordances visuais", 5],
           ["Aprendizagem", "Affordances hápticas", 3],
-          ["Aprendizagem", "Affordances espaciais", "1/2"],
+          ["Aprendizagem", "Affordances espaciais", 2],
           ["Aprendizagem", "Affordances sonoras", 3],
-          ["Aprendizagem", "Affordances dinâmicas", "1/2"],
+          ["Aprendizagem", "Affordances dinâmicas", 1],
+          ["Aprendizagem", "Affordances temporais", 1],
           ["Interação", "Affordances visuais", 6],
           ["Interação", "Affordances hápticas", 3],
-          ["Interação", "Affordances espaciais", "1/2"],
+          ["Interação", "Affordances espaciais", 2],
           ["Interação", "Affordances sonoras", 4],
-          ["Interação", "Affordances dinâmicas", "1/2"],
+          ["Interação", "Affordances dinâmicas", 1],
+          ["Interação", "Affordances temporais",1],
           ["Montagem", "Affordances visuais", 3],
-          ["Montagem", "Affordances hápticas", "1/2"],
-          ["Montagem", "Affordances espaciais", "1/2"],
-          ["Montagem", "Affordances sonoras", "1/2"],
-          ["Montagem", "Affordances dinâmicas", "1/2"],
+          ["Montagem", "Affordances hápticas", 1],
+          ["Montagem", "Affordances espaciais", 0],
+          ["Montagem", "Affordances sonoras", 1],
+          ["Montagem", "Affordances dinâmicas", 0],
+          ["Montagem", "Affordances temporais", 1],
           ["Movimentação", "Affordances visuais", 6],
           ["Movimentação", "Affordances hápticas", 4],
           ["Movimentação", "Affordances espaciais", 2],
           ["Movimentação", "Affordances sonoras", 4],
-          ["Movimentação", "Affordances dinâmicas", "1/2"],
+          ["Movimentação", "Affordances dinâmicas", 1],
+          ["Movimentação", "Affordances temporais", 1],
         ]);
 
         // Set chart options
         var options = {
-          width: 1200,
+          width: 900,
           height: 300,
-          sankey: { node: { nodePadding: 5 } },
+          sankey: { node: { nodePadding: 10 } },
         };
 
         // Instantiate and draw our chart, passing in some options.
