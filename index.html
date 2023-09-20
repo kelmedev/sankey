@@ -1,63 +1,156 @@
 <html>
-<body>
- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <body>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
 
-<div id="sankey_multiple" style="width: 3600px; height: 1200px;"></div>
+    <div id="sankey_multiple" style="width: 3600px; height: 1600px"></div>
 
-<script type="text/javascript">
-  google.charts.load("current", {packages:["sankey"]});
-  google.charts.setOnLoadCallback(drawChart);
-   function drawChart() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'From');
-    data.addColumn('string', 'To');
-    data.addColumn('number', 'Weight');
-    data.addRows([
-      [ '2018', 'AR', 2 ],
-      [ '2018', 'VR', 1 ],
-      [ '2020', 'VR', 3 ],
-      [ '2021', 'AR', 1 ],
-      [ '2021', 'VR', 2 ],
-      [ '2022', 'AR', 3 ],
-      [ '2022', 'VR', 1 ],
-      [ '2022', 'MR', 3 ],
-      [ '2023', 'VR', 1 ], 
-      [ '2023', 'AR', 1 ],
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["sankey"] });
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn("string", "From");
+        data.addColumn("string", "To");
+        data.addColumn("number", "Weight");
+        data.addRows([
+          ["2018", "AR", 2],
+          ["2018", "VR", 1],
+          ["2020", "VR", 3],
+          ["2021", "AR", 1],
+          ["2021", "VR", 2],
+          ["2022", "AR", 3],
+          ["2022", "VR", 1],
+          ["2022", "MR", 3],
+          ["2023", "VR", 1],
+          ["2023", "AR", 1],
 
-       [ 'AR', 'Meta One', 1 ],
-       [ 'AR', 'Não especificado', 1 ],
-       [ 'AR', 'HTC Vive', 2 ],
-       [ 'AR', 'Vuzix M300XL', 1 ],
-       [ 'AR', 'HoloLens 2', 1 ],
-       [ 'AR', 'HoloLens', 1 ],
-       [ 'VR', 'Não especificado', 1 ],
-       [ 'VR', 'Oculus Rift CV1', 0.5 ],
-       [ 'VR', 'HTC Vive', 3 ],
-       [ 'VR', 'HTC Vive Pro', 1 ],
-	 [ 'VR', 'NVIS nVisor ST50', 0.5 ],
-       [ 'VR', 'Meta Oculus Quest 2', 2 ],
-       [ 'MR', 'HoloLens 2', 2 ],
-       [ 'MR', 'Meta Oculus Quest 2', 0.5 ],
- 	[ 'MR', 'Oculus Rift + Meta ', 0.5 ],
+          ["AR", "Meta One", 1],
+          ["AR", "Não especificado", 1],
+          ["AR", "HTC Vive", 2],
+          ["AR", "Vuzix M300XL", 1],
+          ["AR", "HoloLens 2", 1],
+          ["AR", "HoloLens", 1],
+          ["VR", "Não especificado", 1],
+          ["VR", "Oculus Rift CV1", 0.5],
+          ["VR", "HTC Vive", 3],
+          ["VR", "HTC Vive Pro", 1],
+          ["VR", "NVIS nVisor ST50", 0.5],
+          ["VR", "Meta Oculus Quest 2", 2],
+          ["MR", "HoloLens 2", 2],
+          ["MR", "Meta Oculus Quest 2", 0.5],
+          ["MR", "Oculus Rift + Meta ", 0.5],
 
-     
+          ["HTC Vive", "Aprendizagem", 3],
+          ["HTC Vive", "Interação", 3],
+          ["HTC Vive", "Montagem", 2],
+          ["HTC Vive", "Movimentação", 4],
+          ["NVIS nVisor ST50", "Aprendizagem", 0],
+          ["NVIS nVisor ST50", "Interação", 1],
+          ["NVIS nVisor ST50", "Montagem", 1],
+          ["NVIS nVisor ST50", "Movimentação", 1],
+          ["Vuzix M300XL", "Aprendizagem", 0],
+          ["Vuzix M300XL", "Interação", 1],
+          ["Vuzix M300XL", "Montagem", 0],
+          ["Vuzix M300XL", "Movimentação", 2],
+          ["HoloLens 2", "Aprendizagem", 1],
+          ["HoloLens 2", "Interação", 2],
+          ["HoloLens 2", "Montagem", 0],
+          ["HoloLens 2", "Movimentação", 2],
+          ["HoloLens", "Aprendizagem", 0],
+          ["HoloLens", "Interação", 1],
+          ["HoloLens", "Montagem", 0],
+          ["HoloLens", "Movimentação", 1],
+          ["Oculus Rift CV1", "Aprendizagem", 1],
+          ["Oculus Rift CV1", "Interação", 1],
+          ["Oculus Rift CV1", "Montagem", 0],
+          ["Oculus Rift CV1", "Movimentação", 1],
+          ["Meta One", "Aprendizagem", 0],
+          ["Meta One", "Interação", 1],
+          ["Meta One", "Montagem", 0],
+          ["Meta One", "Movimentação", 1],
+          ["Não especificado", "Aprendizagem", 1],
+          ["Não especificado", "Interação", 1],
+          ["Não especificado", "Montagem", 0],
+          ["Não especificado", "Movimentação", 1],
+          ["Meta Oculus Quest 2", "Aprendizagem", 0],
+          ["Meta Oculus Quest 2", "Interação", 1],
+          ["Meta Oculus Quest 2", "Montagem", 0],
+          ["Meta Oculus Quest 2", "Movimentação", 1],
+          ["HTC Vive Pro", "Aprendizagem", 0],
+          ["HTC Vive Pro", "Interação", 1],
+          ["HTC Vive Pro", "Montagem", 1],
+          ["HTC Vive Pro", "Movimentação", 1],
+          ["Oculus Rift + Meta", "Aprendizagem", 0],
+          ["Oculus Rift + Meta", "Interação", 0],
+          ["Oculus Rift + Meta", "Montagem", 0],
+          ["Oculus Rift + Meta", "Movimentação", 0],
 
+          ["Aprendizagem", "physics", 2],
+          ["Aprendizagem", "education", 2],
+          ["Aprendizagem", "health", 3],
+          ["Aprendizagem", "computing", 1],
+          ["Aprendizagem", "aerospace engineering", 1],
+          ["Aprendizagem", "traffic education", 2],
+          ["Interação", "physics", 1],
+          ["Interação", "education", 3],
+          ["Interação", "health", 4],
+          ["Interação", "computing", 2],
+          ["Interação", "aerospace engineering", 1],
+          ["Interação", "traffic education", 2],
+          ["Montagem", "education", 1],
+          ["Montagem", "navigation", 1],
+          ["Montagem", "computing", 1],
+          ["Montagem", "aerospace engineering", 1],
+          ["Movimentação", "physics", 1],
+          ["Movimentação", "education", 2],
+          ["Movimentação", "biology", 1],
+          ["Movimentação", "health", 2],
+          ["Movimentação", "navigation", 1],
+          ["Movimentação", "computing", 1],
+          ["Movimentação", "aerospace engineering", 1],
+          ["Movimentação", "traffic education", 1],
 
+          ["physics", "Affordances visuais", 1],
+          ["physics", "Affordances hápticas", 1],
+          ["education", "Affordances visuais", 3],
+          ["education", "Affordances sonoras", 1],
+          ["education", "Affordances dinâmicas", 1],
+          ["health", "Affordances visuais", 6],
+          ["health", "Affordances hápticas", 2],
+          ["health", "Affordances visuais", 1],
+          ["health", "Affordances sonoras", 1],
+          ["health", "Affordances temporais", 1],
+          ["navigation", "Affordances visuais", 1],
+          ["navigation", "Affordances sonoras", 1],
+          ["computing", "Affordances visuais", 3],
+          ["computing", "Affordances hápticas", 2],
+          ["aerospace engineering", "Affordances visuais", 1],
+          ["aerospace engineering", "Affordances sonoras", 1],
+          ["traffic education", "Affordances espaciais", 2],
+          ["traffic education", "Affordances sonoras", 1],
+          ["traffic education", "Affordances visuais", 1],
+          ["traffic education", "Affordances hápticas", 1],
+          ["biology", "Affordances visuais", 1 / 3],
+          ["biology", "Affordances sonoras", 1 / 3],
+          ["biology", "Affordances dinâmicas", 1 / 3],
+        ]);
 
+        // Set chart options
+        var options = {
+          width: 1200,
+          height: 300,
+          sankey: { node: { nodePadding: 5 } },
+        };
 
-     
-    ]);
-
-    // Set chart options
-    var options = {
-      width: 1000,
-      sankey: { node: { nodePadding: 10 } },
-    };
-
-    // Instantiate and draw our chart, passing in some options.
-    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
-    chart.draw(data, options);
-   }
-</script>
-</body>
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.Sankey(
+          document.getElementById("sankey_multiple")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+  </body>
 </html>
