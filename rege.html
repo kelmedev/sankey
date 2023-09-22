@@ -1,0 +1,76 @@
+<html>
+	<body>
+		<script
+			type="text/javascript"
+			src="https://www.gstatic.com/charts/loader.js"
+		></script>
+
+		<div id="sankey_multiple" style="width: 2000px; height: 900px"></div>
+
+		<script type="text/javascript">
+			google.charts.load("current", { packages: ["sankey"] });
+			google.charts.setOnLoadCallback(drawChart);
+			function drawChart() {
+				var data = new google.visualization.DataTable();
+				data.addColumn("string", "From");
+				data.addColumn("string", "To");
+				data.addColumn("number", "Weight");
+				data.addRows([
+					["Desenvolver habilidades do PC", "Infantil", 2],
+					["Desenvolver habilidades do PC", "Fundamental", 16],
+					["Desenvolver habilidades do PC", "Médio", 2],
+					["Desenvolver habilidades do PC", "Médio Técnico", 1],
+					["Desenvolver habilidades do PC", "Superior", 3],
+
+					["Promover o ensino de PC", "Infantil", 0],
+					["Promover o ensino de PC", "Fundamental", 14],
+					["Promover o ensino de PC", "Médio", 3],
+					["Promover o ensino de PC", "Médio Técnico", 1],
+					["Promover o ensino de PC", "Superior", 1],
+
+					[
+						"Desenvolver o raciocínio lógico e habilidades de programação",
+						"Médio",
+						2,
+					],
+					[
+						"Desenvolver o raciocínio lógico e habilidades de programação",
+						"Médio Técnico",
+						2,
+					],
+					[
+						"Desenvolver o raciocínio lógico e habilidades de programação",
+						"Superior",
+						2,
+					],
+
+					["Resolver problemas", "Médio", 3],
+					["Resolver problemas", "Médio Técnico", 1],
+
+					["Promover a inclusão", "Fundamental", 3],
+
+					["Avaliar práticas de ensino", "Infantil", 1],
+					["Avaliar práticas de ensino", "Médio", 2],
+					["Avaliar práticas de ensino", "Médio Técnico", 2],
+					["Avaliar práticas de ensino", "Superior", 1],
+				]);
+
+				// Set chart options
+				var options = {
+					width: 900,
+					height: 640,
+					sankey: {
+						link: { color: { fill: "#aaaaaa" } },
+						node: { nodePadding: 20, color: { fill: '#aaaaaa' } },
+					},
+				};
+
+				// Instantiate and draw our chart, passing in some options.
+				var chart = new google.visualization.Sankey(
+					document.getElementById("sankey_multiple")
+				);
+				chart.draw(data, options);
+			}
+		</script>
+	</body>
+</html>
