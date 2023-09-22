@@ -1,84 +1,59 @@
 <html>
-  <body>
-    <script
-      type="text/javascript"
-      src="https://www.gstatic.com/charts/loader.js"
-    ></script>
+	<body>
+		<script
+			type="text/javascript"
+			src="https://www.gstatic.com/charts/loader.js"
+		></script>
 
-    <div id="sankey_multiple" style="width: 2000px; height: 900px"></div>
+		<div id="sankey_multiple" style="width: 2000px; height: 900px"></div>
 
-    <script type="text/javascript">
-      google.charts.load("current", { packages: ["sankey"] });
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn("string", "From");
-        data.addColumn("string", "To");
-        data.addColumn("number", "Weight");
-        data.addRows([
-          ["2018", "AR", 2],
-          ["2018", "VR", 1],
-          ["2020", "VR", 3],
-          ["2021", "AR", 1],
-          ["2021", "VR", 2],
-          ["2022", "AR", 3],
-          ["2022", "VR", 1],
-          ["2022", "MR", 3],
-          ["2023", "VR", 2],
-          ["2023", "AR", 1],
+		<script type="text/javascript">
+			google.charts.load("current", { packages: ["sankey"] });
+			google.charts.setOnLoadCallback(drawChart);
+			function drawChart() {
+				var data = new google.visualization.DataTable();
+				data.addColumn("string", "From");
+				data.addColumn("string", "To");
+				data.addColumn("number", "Weight");
+				data.addRows([
+					["AR", "Static", 5],
+					["AR", "Dynamic", 6],
+					["VR", "Static", 4],
+					["VR", "Dynamic", 5],
+					["MR", "Static", 2],
+					["MR", "Dynamic", 3],
 
-          ["AR", "Aprendizagem", 1],
-          ["AR", "Interação", 2],
-          ["AR", "Montagem", 2],
-          ["AR", "Movimentação", 2],
-          ["VR", "Aprendizagem", 0.75],
-          ["VR", "Interação", 1.5],
-          ["VR", "Montagem", 4],
-          ["VR", "Movimentação", 2.75],
-          ["MR", "Aprendizagem", 0.5],
-          ["MR", "Interação", 0.5],
-          ["MR", "Montagem", 1],
-          ["MR", "Movimentação", 1],
+					["Static", "Visual affordances", 8.5],
+					["Static", "Sound affordances", 2],
+					["Static", "Spatial affordances", 0.5],
+					["Dynamic", "Visual affordances", 9],
+					["Dynamic", "Sound affordances", 4],
+					["Dynamic", "Spatial affordances", 1],
 
-          ["Aprendizagem", "Affordances visuais", 1 / 4],
-          ["Aprendizagem", "Affordances hápticas", 1 / 2],
-          ["Aprendizagem", "Affordances espaciais", 1 / 4],
-          ["Aprendizagem", "Affordances sonoras", 1 / 4],
-          ["Aprendizagem", "Affordances dinâmicas", 1 / 2],
-          ["Aprendizagem", "Affordances temporais", 1 / 2],
-          ["Interação", "Affordances visuais", 1 / 2],
-          ["Interação", "Affordances hápticas", 1 / 4],
-          ["Interação", "Affordances espaciais", 1],
-          ["Interação", "Affordances sonoras", 0.75],
-          ["Interação", "Affordances dinâmicas", 1 / 2],
-          ["Interação", "Affordances temporais", 1],
-          ["Montagem", "Affordances visuais", 3],
-          ["Montagem", "Affordances hápticas", 1],
-          ["Montagem", "Affordances espaciais", 0],
-          ["Montagem", "Affordances sonoras", 2],
-          ["Montagem", "Affordances dinâmicas", 0],
-          ["Montagem", "Affordances temporais", 1],
-          ["Movimentação", "Affordances visuais", 1 / 2],
-          ["Movimentação", "Affordances hápticas", 1 / 2],
-          ["Movimentação", "Affordances espaciais", 1.75],
-          ["Movimentação", "Affordances sonoras", 1 / 2],
-          ["Movimentação", "Affordances dinâmicas", 1 / 2],
-          ["Movimentação", "Affordances temporais", 2],
-        ]);
+					["Visual affordances", "Learning", 1.5],
+					["Visual affordances", "Interaction", 4],
+					["Visual affordances", "Mounting", 3],
+					["Visual affordances", "Navigation", 3],
+					["Sound affordances", "Navigation", 2],
+					["Spatial affordances", "Interaction", 1.5],
+					["Visual affordances", "Learning", 6],
+					["Sound affordances", "Interaction", 3],
+					["Sound affordances", "Learning", 1],
+				]);
 
-        // Set chart options
-        var options = {
-          width: 900,
-          height: 300,
-          sankey: { node: { nodePadding: 10 } },
-        };
+				// Set chart options
+				var options = {
+					width: 900,
+					height: 240,
+					sankey: { node: { nodePadding: 20 } },
+				};
 
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.Sankey(
-          document.getElementById("sankey_multiple")
-        );
-        chart.draw(data, options);
-      }
-    </script>
-  </body>
+				// Instantiate and draw our chart, passing in some options.
+				var chart = new google.visualization.Sankey(
+					document.getElementById("sankey_multiple")
+				);
+				chart.draw(data, options);
+			}
+		</script>
+	</body>
 </html>
